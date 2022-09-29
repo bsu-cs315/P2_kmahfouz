@@ -23,7 +23,7 @@ func _physics_process(delta:float)->void:
 	
 	_update_animation(input)
 	
-
+	
 func _update_animation(input:Vector2):
 	_sprite.scale.x = -1 if input.x < 0 else 1
 # warning-ignore:standalone_ternary
