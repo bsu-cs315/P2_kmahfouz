@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const _GRAVITY := 150
-const _JUMP_STRENGTH := 150
-const _SPEED := 200
+const _GRAVITY := 350
+const _JUMP_STRENGTH := 300
+const _SPEED := 300
 
 var _velocity := Vector2.ZERO
 
@@ -25,7 +25,13 @@ func _physics_process(delta:float)->void:
 	
 	
 func _update_animation(input:Vector2):
-	_sprite.scale.x = -1 if input.x < 0 else 1
-# warning-ignore:standalone_ternary
-	_sprite.play("idle") if input.x == 0 else _sprite.play("walk")
+	if input.x < 0:
+		_sprite.scale.x = -1
+	else: 
+		_sprite.scale.x = 1
+		
+	if input.x == 0:
+		_sprite.play("idle")
+	else: 
+		_sprite.play("walk") 
 	
