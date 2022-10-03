@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const _GRAVITY := 350
-const _JUMP_STRENGTH := 300
+const _JUMP_STRENGTH := 400
 const _SPEED := 300
 
 var _velocity := Vector2.ZERO
